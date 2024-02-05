@@ -1,0 +1,65 @@
+create table user(userId int primary key auto_increment, userEmail varchar(100) not null unique, userContact varchar(10) not null unique, username varchar(20) not null unique, password varchar(20) not null);
+
+create table category(categoryId int primary key auto_increment, categoryName varchar(50) not null unique);
+
+create table allProfile(profileId int primary key auto_increment, profileCategoryId int not null, foreign key(profileCategoryId) references category(categoryId));
+
+create table savedProfiles(profileId int primary key auto_increment, userId int not null, categoryId int not null, dateCreated dateTime not null, lastModifies dateTime, foreign key (userId) references user(userId), foreign key(categoryId) references category(categoryId));
+
+create table personalTable(personalId int primary key not null unique,categoryId int not null, userId int not null, firstName varchar(30) not null, middleName varchar(30),lastName varchar(30) not null, dob date not null, motherName varchar(50), fatherName varchar(50), address varchar(100) not null, city varchar(20) not null, state varchar(2) not null, gender varchar(20) not null,occupation varchar(30), hobbies varchar(200), maritalStatus varchar(50) not null, foreign key (categoryId) references category(categoryId), foreign key (userId) references user(userId));
+
+
+create table businessProfile(businessId int primary key not null unique, categoryid int not null, userId int not null, companyName varchar(100) not null, industry varchar(100), address varchar(100) not null, city varchar(50) not null, state varchar(50) not null, postalCode varchar(20), country varchar(20), contactNumber varchar(10) not null unique,emailAddress varchar(150) unique, websiteUrl varchar(255) unique, foundingYear year not null, description text, logoUrl varchar(255), foreign key (categoryId) references category(categoryId), foreign key (userId) references user(userId));
+
+
+
+create table marriage(marriageId int primary key not null unique, categoryid int not null, userId int not null, name varchar(50) not null,dob date not null, address varchar(255) not null, placeOfBirth varchar(50), contactNumber varchar(10) not null,educationalDetails varchar(100), professionalDetails varchar(100), familyDetails text not null, hobbies varchar(150), about text, photoUrl varchar(255),foreign key (categoryId) references category(categoryId), foreign key (userId) references user(userId));
+
+
+create table startUp(startUpId int primary key not null unique, categoryid int not null, userId int not null,startUpName varchar(50) not null, logoImageUrl varchar(255), foundingDate date not null, founderName varchar(50) not null, missionVission text, aboutStartUp text not null, contact varchar(10) not null, email varchar(100) not null, websiteUrl varchar(255), tagLine varchar(100),foreign key (categoryId) references category(categoryId), foreign key (userId) references user(userId) );
+
+
+create table portfolio(portfolioId int primary key not null unique, categoryid int not null, userId int not null, fullName varchar(60) not null,contact varchar(10) not null, email varchar(100) not null, linkedInLink varchar(255), gitHubLink varchar(255), skills varchar(255),  workExperience varchar(255),  projectDescription varchar(255), certification varchar(255),  portfolioLink varchar(255),foreign key (categoryId) references category(categoryId), foreign key (userId) references user(userId));
+
+
+create table education(educationId int primary key not null unique, categoryid int not null, userId int not null, fullName varchar(60) not null, email varchar(100), tenthMarks decimal, twelvthMarks decimal, dob date, address varchar(255), gender varchar(20), contact varchar(10),foreign key (categoryId) references category(categoryId), foreign key (userId) references user(userId));
+
+
+create table travel(travelId int primary key not null unique, categoryid int not null, userId int not null, fullName varchar(60) not null, email varchar(100),passportNumber varchar(10),dob date, address varchar(255), gender varchar(20),city varchar(20), state varchar(20),nationality varchar(50), emergencyContact varchar(10),visitedDestinations text, contact varchar(10),travelBlogLink varchar(255),memberShip varchar(50),foreign key (categoryId) references category(categoryId), foreign key (userId) references user(userId));
+
+
+
+create table dating(datingId int primary key not null unique, categoryid int not null, userId int not null, fullName varchar(60) not null, email varchar(100),photoUrl varchar(255),dob date, bio text, gender varchar(20),height decimal, skinTone varchar(50),location varchar(100),nationality varchar(50), caste varchar(20),religion varchar(20),interests text, educationalDetails varchar(100),travelBlogLink varchar(255),memberShip varchar(50),foreign key (categoryId) references category(categoryId), foreign key (userId) references user(userId));
+
+create table gamer(gamingId int primary key not null unique, categoryid int not null, userId int not null,photoUrl varchar(255), name varchar(50), gamingName varchar(60), dob date, playerAchievements varchar(225), killPerRound decimal, headShots decimal, mapsPlayed int, deathPerRound decimal, teamsDetail text,foreign key (categoryId) references category(categoryId), foreign key (userId) references user(userId));
+
+create table savedToWatchLater(watchLaterId int primary key , savedProfileId int not null, userId int not null,foreign key (savedProfileId) references allprofile(profileId), foreign key (userId) references user(userId));
+
+
+alter table visited drop visitingDate;
+
+
+color combo:
+1. #8D8741
+   #659DBD
+   #DAAD86
+   #BC986A
+   #FBEEC1
+
+2. #E7717D
+   #C2CAD0
+   #C2B9B0
+   #7E685A
+   #AFD275
+
+3. #D79922
+   #EFE2BA
+   #F13C20
+   #4056A1
+   #C5CBE3
+
+4. #EBC7B7
+   #EEE2DC
+   #BAB2B5
+   #123C69
+   #AC3B61

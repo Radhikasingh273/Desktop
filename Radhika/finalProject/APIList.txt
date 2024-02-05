@@ -1,0 +1,101 @@
+user : {
+    signIn
+    signUp
+    log-out
+}
+
+allProfile : {
+    showAllProfile
+    addProfile
+    removeProfile
+}
+
+savedUserProfile : {
+    showProfiles
+    createNewProfile
+    deleteProfile
+    viewAllCreatedProfiles
+}
+
+savedToWatchLater : {
+    showWatchLaterList
+    addToWatchLater
+    removeFromWatchLater
+}
+
+category : {
+    showAllCategory
+    addCategory
+    deleteCategory
+}
+
+visited : {
+    markAsVisiter
+    showVisitedUsers
+}
+
+socialLinks : {
+    addLinks
+    removeLinks
+    updateLinks
+    getLinks
+}
+
+shareList : {
+    addSharingDetails
+}
+
+businessProfile : {
+    createBusinessProfile
+    updateBusinessDetails
+    deleteBusinessProfile
+}
+
+dating : {
+    createDatingProfile
+    updateDatingDetails
+    deleteDatingProfile
+}
+
+education : {
+    createEducationProfile
+    updateEducationDetails
+    deleteEducationProfile
+}
+
+gamer : {
+    createGamerProfile
+    updateGamerDetails
+    deleteGamerProfile
+}
+
+marriage : {
+    createMarriageProfile
+    updateMarriageDetails
+    deleteMarriageProfile
+}
+
+personalTable : {
+    createPersonalProfile
+    updatePersonalDetails
+    deletePersonalProfile
+}
+
+portfolio : {
+    createPortfolioProfile
+    updatePortfolioDetails
+    deletePortfolioProfile
+}
+
+startUp : {
+    createStartUpProfile
+    updateStartUpDetails
+    deleteStartUpProfile
+}
+
+travel : {
+    createTravelProfile
+    updateTravelDetails
+    deleteTravelProfile
+} 
+
